@@ -55,7 +55,7 @@ watch(count, () => scrollToTop())
     >
       <div
         v-for="row in virtualizer.getVirtualItems()"
-        :key="row.key"
+        :key="String(row.key)"
         :style="{
           position: 'absolute',
           top: 0,

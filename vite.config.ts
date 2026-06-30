@@ -3,8 +3,13 @@ import vue from '@vitejs/plugin-vue'
 import UnoCSS from 'unocss/vite'
 import presetUno from '@unocss/preset-uno'
 import { resolve } from 'path'
+import 'dotenv/config';
 
 export default defineConfig({
+  base: process.env.VITE_BASE_URL || '/',
+  build: {
+    outDir: process.env.VITE_BUILD_DIR || 'dist',
+  },
   plugins: [
     vue(),
     UnoCSS({
